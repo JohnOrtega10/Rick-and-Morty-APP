@@ -1,0 +1,55 @@
+.resident-list-conteiner{
+    text-align: center;
+    background-image: linear-gradient(to right,  #3282b896, #BBE1FA, #3282b896);
+    padding: 40px;
+}
+
+.resident-list-conteiner h1{
+    color: #1B262C;
+    font-weight: 900;
+}
+
+.resident-list-conteiner .list-residents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.resident-list-conteiner .buttons-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.resident-list-conteiner .buttons-pagination button{
+    border:none; 
+    background-color: #0F4C75;
+    color: white;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.resident-list-conteiner .buttons-pagination button:hover{
+    background-color: #1b74af;
+}
+
+.resident-list-conteiner .buttons-pagination .button-selected{
+    background-color: #08293f;
+}
+
+footer{
+    height: 60px;
+    background-image: url('../../images/earth.png');
+    background-position: 0px -230px;
+}
+
+footer .footer-background{
+    width: 100%;
+    height: 100%;
+    background-color: #0f4c75d2;
+}

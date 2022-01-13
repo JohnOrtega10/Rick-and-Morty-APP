@@ -9,14 +9,7 @@ const SearchBox = ({handleLocation}) => {
     const [namesData, setNamesData] = useState ({})
     const [nameFilter, setNameFilter] = useState("")
     const [nameValue, setNameValue] = useState("")
-     
-    useEffect(()=>{
-        axios.get(`https://rickandmortyapi.com/api/location/?name=${nameFilter}`)
-              .then(res=>setNamesData(res.data))
-              .catch(()=>setNamesData(nameNotFound))
-    },[nameFilter])
-
-
+    
     const nameNotFound = {
         results: [
                     {
@@ -26,6 +19,18 @@ const SearchBox = ({handleLocation}) => {
                  ]
     }
 
+    const nameNotFoundFuntion = ()=>{
+        setNamesData(nameNotFound)
+    }
+     
+    useEffect(()=>{
+        axios.get(`https://rickandmortyapi.com/api/location/?name=${nameFilter}`)
+              .then(res=>setNamesData(res.data))
+              .catch(()=>nameNotFoundFuntion())
+    },[nameFilter])
+
+
+    
     
     const isNotFound = (name,id)=>{
         if (name!=="Not found"){

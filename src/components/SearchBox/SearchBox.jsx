@@ -9,25 +9,12 @@ const SearchBox = ({handleLocation}) => {
     const [namesData, setNamesData] = useState ({})
     const [nameFilter, setNameFilter] = useState("")
     const [nameValue, setNameValue] = useState("")
-    
-    const nameNotFound = {
-        results: [
-                    {
-                        name: "Not found",
-                        id: 1
-                    }
-                 ]
-    }
-
-    const nameNotFoundFuntion = ()=>{
-        setNamesData(nameNotFound)
-    }
      
     useEffect(()=>{
         axios.get(`https://rickandmortyapi.com/api/location/?name=${nameFilter}`)
               .then(res=>setNamesData(res.data))
-              .catch(()=>nameNotFoundFuntion())
-              // eslint-disable-line react-hooks/exhaustive-deps
+              .catch(()=>setNamesData({results:[{name:"Not found",id: 1}]}))
+           
     },[nameFilter])
 
 

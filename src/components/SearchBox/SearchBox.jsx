@@ -27,6 +27,7 @@ const SearchBox = ({handleLocation}) => {
         axios.get(`https://rickandmortyapi.com/api/location/?name=${nameFilter}`)
               .then(res=>setNamesData(res.data))
               .catch(()=>nameNotFoundFuntion())
+              // eslint-disable-line react-hooks/exhaustive-deps
     },[nameFilter])
 
 

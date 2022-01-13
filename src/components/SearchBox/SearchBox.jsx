@@ -13,7 +13,7 @@ const SearchBox = ({handleLocation}) => {
     useEffect(()=>{
         axios.get(`https://rickandmortyapi.com/api/location/?name=${nameFilter}`)
               .then(res=>setNamesData(res.data))
-              .catch((error)=>setNamesData(nameNotFound))
+              .catch(()=>setNamesData(nameNotFound))
     },[nameFilter])
 
 

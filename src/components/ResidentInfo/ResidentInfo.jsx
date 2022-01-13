@@ -9,7 +9,7 @@ const ResidentInfo = ({url}) => {
     useEffect (()=>{
         axios.get(url)
              .then(res=>setResident(res.data))
-    },[]) 
+    },[url]) 
 
     const handleStatus = ()=>{ 
         if(resident.status==="Alive"){
